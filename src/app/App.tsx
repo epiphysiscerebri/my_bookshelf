@@ -1,7 +1,10 @@
-import "./App.css";
+import { AppHeader } from "../widgets";
+import styles from "./App.module.css";
 
-function App() {
-  return <></>;
+export function App() {
+  return (
+    <div className={styles.app}>
+      <AppHeader></AppHeader>
+    </div>
+  );
 }
-
-export default App;
