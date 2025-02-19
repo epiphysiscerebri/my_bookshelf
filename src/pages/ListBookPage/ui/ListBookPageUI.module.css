@@ -5,7 +5,7 @@
 
 .control_panel {
   display: flex;
-  gap: 10px;
+  gap: 2rem;
   justify-content: flex-end;
   padding: 10px;
 }
@@ -31,5 +31,5 @@
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  gap: 10px;
+  gap: 2rem;
 }

@@ -4,7 +4,7 @@ import styles from "./ListBookPageUI.module.css";
 
 export const ListBookPageUI: FC<{
   // TODO: заменить на тип
-  booksArray: { name: string; author: string }[];
+  booksArray: { name: string; author: string; year: string; genre: string }[];
 }> = ({ booksArray }) => (
   <div className={styles.container_content}>
     <div className={styles.control_panel}>
@@ -16,8 +16,14 @@ export const ListBookPageUI: FC<{
       </div>
     </div>
     <div className={styles.container_books}>
-      {booksArray.map((book) => (
-        <BookCard name={book.name} author={book.author} />
+      {booksArray.map((book, index) => (
+        <BookCard
+          name={book.name}
+          author={book.author}
+          year={book.year}
+          genre={book.genre}
+          index={index + 1}
+        />
       ))}
     </div>
   </div>
