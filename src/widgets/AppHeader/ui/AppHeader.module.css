@@ -1,13 +1,11 @@
 .header {
   background-color: white;
-  font-family: "Russo One", sans-serif;
 }
 
 .menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* max-width: 1240px; */
   height: 56px;
   margin: 0 auto;
   padding: 5px;
@@ -36,5 +34,4 @@
 
 .link_text {
   align-self: center;
-  text-align: center;
 }
