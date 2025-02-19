@@ -11,7 +11,7 @@ export const AppHeaderUI: FC = () => (
           <span className={styles.link_text}>моя полка</span>
         </Link>
         <Link to={"/login"} className={styles.link}>
-          <span className={styles.link_text}>вход</span>
+          <span className={styles.link_text}>выход</span>
         </Link>
       </div>
     </nav>

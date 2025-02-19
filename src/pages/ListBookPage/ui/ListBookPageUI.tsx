@@ -4,7 +4,13 @@ import styles from "./ListBookPageUI.module.css";
 
 export const ListBookPageUI: FC<{
   // TODO: заменить на тип
-  booksArray: { name: string; author: string; year: string; genre: string }[];
+  booksArray: {
+    name: string;
+    author: string;
+    year: string;
+    genre: string;
+    id: string;
+  }[];
 }> = ({ booksArray }) => (
   <div className={styles.container_content}>
     <div className={styles.control_panel}>
@@ -23,6 +29,7 @@ export const ListBookPageUI: FC<{
           year={book.year}
           genre={book.genre}
           index={index + 1}
+          id={book.id}
         />
       ))}
     </div>

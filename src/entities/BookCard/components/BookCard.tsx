@@ -8,12 +8,14 @@ export const BookCard: FC<{
   year: string;
   genre: string;
   index: number;
-}> = ({ name, author, year, genre, index }) => (
+  id: string;
+}> = ({ name, author, year, genre, index, id }) => (
   <BookCardUI
     name={name}
     author={author}
     year={year}
     genre={genre}
     index={index}
+    id={id}
   />
 );

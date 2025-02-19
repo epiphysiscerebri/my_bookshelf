@@ -7,7 +7,8 @@ export const BookCardUI: FC<{
   year: string;
   genre: string;
   index: number;
-}> = ({ name, author, year, genre, index }) => (
+  id: string;
+}> = ({ name, author, year, genre, index, id }) => (
   <div className={styles.book_card}>
     <div className={styles.book_card__header}>
       <div className={styles.book_card__item__id}>
