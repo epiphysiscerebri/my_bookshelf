@@ -6,12 +6,10 @@ export const BookFormUI: FC<{
   author?: string;
   year?: string;
   genre?: string;
-  index?: number;
-  id?: string;
   type_form?: string;
   onSave: () => void;
   onClose: () => void;
-}> = ({ name, author, year, genre, index, id, type_form, onSave, onClose }) => (
+}> = ({ name, author, year, genre, onSave, onClose }) => (
   <div className={styles.book_form}>
     <div className={styles.book_form__content}>
       <div className={styles.book_form__item}>

@@ -6,7 +6,7 @@
 .control_panel {
   display: flex;
   gap: 2rem;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 10px;
 }
 
@@ -16,6 +16,7 @@
   min-height: 55px;
   min-width: 80px;
   outline: 1px solid white;
+  border-radius: 10%;
 }
 
 .control_panel__btn__text {

@@ -11,15 +11,13 @@ export const BookForm: FC<{
   id?: string;
   onSave?: () => void;
   onClose?: () => void;
-}> = ({ name, author, year, genre, index, id, onSave, onClose }) => (
+}> = ({ name, author, year, genre /*onSave, onClose*/ }) => (
   // TODO: Сделать вывод формы по условию
   <BookFormUI
     name={name}
     author={author}
     year={year}
     genre={genre}
-    index={index}
-    id={id}
     type_form="edit"
     // TODO: Функции прокидываются сюда
     onSave={() => console.log("save")}

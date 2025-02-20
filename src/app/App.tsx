@@ -1,18 +1,18 @@
 import { BookForm } from "../entities";
-import { ListBookPage } from "../pages";
+import { BookListPage } from "../pages";
 import { Modal } from "../shared";
 import { AppHeader } from "../widgets";
 import styles from "./App.module.css";
 import { Routes, Route } from "react-router-dom";
 
-// TODO: Будет братсья из стора
-const dataBookCard = {
-  name: "Война и мир",
-  author: "Л.Н. Толстой",
-  year: "1873",
-  genre: "роман-эпопея",
-  id: "123213",
-};
+// TODO: Будет браться из стора
+// const dataBookCard = {
+//   name: "Война и мир",
+//   author: "Л.Н. Толстой",
+//   year: "1873",
+//   genre: "роман-эпопея",
+//   id: "123213",
+// };
 
 export function App() {
   return (
@@ -22,8 +22,8 @@ export function App() {
       {/* Основные страницы */}
 
       <Routes>
-        <Route path="/" element={<ListBookPage />} />
-        <Route path="/login" element={<ListBookPage />} />
+        <Route path="/" element={<BookListPage />} />
+        <Route path="/login" element={<BookListPage />} />
       </Routes>
 
       {/* Модальные окна */}
