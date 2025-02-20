@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styles from "./BookCardUI.module.css";
 import { Link, Location } from "react-router-dom";
-
+import { Edit } from "@mui/icons-material";
 export const BookCardUI: FC<{
   // TODO: Заменить на отдельный тип
   name: string;
@@ -19,7 +19,7 @@ export const BookCardUI: FC<{
       </div>
       <div className={styles.book_card__header__control_panel}>
         <Link className="link" to={`/book/edit/${id}`} state={locationState}>
-          <div>e</div>
+          <Edit />
         </Link>
         <input type="checkbox" />
       </div>

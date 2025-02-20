@@ -49,8 +49,7 @@ export function App() {
           <Route
             path="/book/edit/:idBook"
             element={
-              <Modal title="dialog" onClose={closeModal}>
-                {/* TODO: Прокидывать функции закрытия и сохранения, либо функцию сохранения просто навесить в самом компоненте формы */}
+              <Modal title="Изменить книгу" onClose={closeModal}>
                 <BookForm />
               </Modal>
             }
@@ -58,7 +57,7 @@ export function App() {
           <Route
             path="/book/create"
             element={
-              <Modal title="dialog" onClose={closeModal}>
+              <Modal title="Добавить книгу" onClose={closeModal}>
                 {/* TODO: Прокидывать функции закрытия и сохранения, либо функцию сохранения просто навесить в самом компоненте формы */}
                 <BookForm />
               </Modal>

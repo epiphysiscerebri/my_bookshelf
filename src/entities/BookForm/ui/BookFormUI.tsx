@@ -1,5 +1,8 @@
 import { FC } from "react";
 import styles from "./BookFormUI.module.css";
+import { Button, TextField } from "../../../shared";
+import { Box } from "@mui/material";
+
 export const BookFormUI: FC<{
   // TODO: Заменить на отдельный тип
   name?: string;
@@ -10,31 +13,21 @@ export const BookFormUI: FC<{
   onSave: () => void;
   onClose: () => void;
 }> = ({ name, author, year, genre, onSave, onClose }) => (
-  <div className={styles.book_form}>
+  <Box
+    component="form"
+    noValidate
+    autoComplete="off"
+    className={styles.book_form}
+  >
     <div className={styles.book_form__content}>
-      <div className={styles.book_form__item}>
-        Название: <input type="text" value={name} />
-      </div>
-      <div className={styles.book_form__item}>
-        Автор:
-        <input type="text" value={author} />
-      </div>
-      <div className={styles.book_form__item}>
-        Год:
-        <input type="text" value={year} />
-      </div>
-      <div className={styles.book_form__item}>
-        Жанр:
-        <input type="text" value={genre} />
-      </div>
+      <TextField label="Название" defaultValue={name}></TextField>
+      <TextField label="Автор" defaultValue={author}></TextField>
+      <TextField label="Год" defaultValue={year}></TextField>
+      <TextField label="Жанр" defaultValue={genre}></TextField>
     </div>
     <div className={styles.book_form__control_panel}>
-      <div className={styles.book_form__control_panel__item} onClick={onSave}>
-        Отменить
-      </div>
-      <div className={styles.book_form__control_panel__item} onClick={onClose}>
-        Схоранить
-      </div>
+      <Button onClickBtn={onSave}>Схоранить</Button>
+      <Button onClickBtn={onClose}>Отменить</Button>
     </div>
-  </div>
+  </Box>
 );
