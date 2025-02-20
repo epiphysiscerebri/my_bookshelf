@@ -1,5 +1,7 @@
 import { FC } from "react";
 import styles from "./BookCardUI.module.css";
+import { Link, Location } from "react-router-dom";
+
 export const BookCardUI: FC<{
   // TODO: Заменить на отдельный тип
   name: string;
@@ -8,14 +10,17 @@ export const BookCardUI: FC<{
   genre: string;
   index: number;
   id: string;
-}> = ({ name, author, year, genre, index, id }) => (
+  locationState: { background: Location };
+}> = ({ name, author, year, genre, index, id, locationState }) => (
   <div className={styles.book_card}>
     <div className={styles.book_card__header}>
       <div className={styles.book_card__item__id}>
         <div className={styles.book_card__item__id__text}>{index}</div>
       </div>
       <div className={styles.book_card__header__control_panel}>
-        <div>e</div>
+        <Link className="link" to={`/book/edit/${id}`} state={locationState}>
+          <div>e</div>
+        </Link>
         <input type="checkbox" />
       </div>
     </div>

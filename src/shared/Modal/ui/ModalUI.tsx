@@ -1,7 +1,6 @@
 import { FC } from "react";
 
-import styles from "./ModalUI.module.css";
-import { ModalOverlayUI } from "../../ModalOverlay";
+import { Dialog, DialogTitle, DialogContent, Box } from "@mui/material";
 
 export const ModalUI: FC<{
   title: string;
@@ -9,15 +8,34 @@ export const ModalUI: FC<{
   children: React.ReactNode;
 }> = ({ title, onClose, children }) => (
   <>
-    <div className={styles.modal}>
-      <div className={styles.header}>
-        {title}
-        <button className={styles.button} type="button" onClick={onClose}>
-          {/* <div onClick={onClose} /> */}
-        </button>
-      </div>
-      <div className={styles.content}>{children}</div>
-    </div>
-    <ModalOverlayUI onClick={onClose} />
+    <Dialog
+      open={true}
+      onClose={onClose}
+      aria-labelledby="alert-dialog-title"
+      sx={{
+        "& .MuiDialog-paper": {
+          backgroundColor: "black",
+          outline: "1px solid white",
+          color: "white",
+          borderRadius: "1%",
+          padding: "20px",
+        },
+      }}
+    >
+      <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
+      <DialogContent>
+        <Box
+          component="div"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            m: "auto",
+            width: "fit-content",
+          }}
+        >
+          {children}
+        </Box>
+      </DialogContent>
+    </Dialog>
   </>
 );

@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { BookCardUI } from "../ui";
+import { Location } from "react-router-dom";
 
 export const BookCard: FC<{
   // TODO: Заменить на отдельный тип
@@ -9,13 +10,17 @@ export const BookCard: FC<{
   genre: string;
   index: number;
   id: string;
-}> = ({ name, author, year, genre, index, id }) => (
-  <BookCardUI
-    name={name}
-    author={author}
-    year={year}
-    genre={genre}
-    index={index}
-    id={id}
-  />
-);
+  locationState: Location;
+}> = ({ name, author, year, genre, index, id, locationState }) => {
+  return (
+    <BookCardUI
+      name={name}
+      author={author}
+      year={year}
+      genre={genre}
+      index={index}
+      id={id}
+      locationState={{ background: locationState }}
+    />
+  );
+};

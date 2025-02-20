@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { BookListUI } from "../ui";
+import { useLocation } from "react-router-dom";
 // TODO: моковые данные, перенести в стор
 const arrBooks = [
   {
@@ -53,4 +54,23 @@ const arrBooks = [
   },
 ];
 
-export const BookList: FC = () => <BookListUI booksArray={arrBooks} />;
+export const BookList: FC = () => {
+  const location = useLocation();
+
+  const handleDelete = () => {
+    console.log("удалить");
+  };
+
+  const handleCreate = () => {
+    console.log("добавить");
+  };
+
+  return (
+    <BookListUI
+      booksArray={arrBooks}
+      locationState={location}
+      onClickCreateBtn={handleCreate}
+      onClickDeleteBtn={handleDelete}
+    />
+  );
+};
