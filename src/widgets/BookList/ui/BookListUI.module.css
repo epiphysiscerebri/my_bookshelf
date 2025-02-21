@@ -1,17 +1,17 @@
-.container_content {
+.book-list {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.control_panel {
+.book-list__control-panel {
   display: flex;
   gap: 2rem;
   justify-content: flex-start;
   padding: 10px;
 }
 
-.control_panel__btn {
+.book-list__control-btn {
   display: flex;
   justify-content: center;
   min-height: 55px;
@@ -20,16 +20,16 @@
   border-radius: 10%;
 }
 
-.control_panel__btn__text {
+.book-list__control-btn__text {
   align-self: center;
 }
 
-.control_panel__btn:hover {
+.book-list__control-btn:hover {
   cursor: pointer;
   opacity: 0.7;
 }
 
-.container_books {
+.book-list__container {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;

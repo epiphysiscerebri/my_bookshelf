@@ -2,7 +2,7 @@
   background-color: white;
 }
 
-.menu {
+.header__menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,12 +12,12 @@
   color: black;
 }
 
-/* .link_list {
+/* .header__link-list {
   display: flex;
   height: 100%;
 } */
 
-.link {
+.header__link {
   display: flex;
   padding: 0 3px;
   min-width: 90px;
@@ -26,6 +26,6 @@
   text-decoration: none;
 }
 
-/* .link_text {
+/* .header__link-text {
   align-self: center;
 } */

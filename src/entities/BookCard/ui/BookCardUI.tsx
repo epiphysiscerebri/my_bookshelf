@@ -16,12 +16,12 @@ export const BookCardUI: FC<TBookCardUIProps> = ({
   onClickEdit,
   onChangeCheckbox,
 }) => (
-  <div className={styles.book_card}>
-    <div className={styles.book_card__header}>
-      <div className={styles.book_card__item__id}>
-        <div className={styles.book_card__item__id__text}>{index}</div>
+  <div className={styles["book-card"]}>
+    <div className={styles["book-card__header"]}>
+      <div className={styles["book-card__id"]}>
+        <div className={styles["book-card__id-text"]}>{index}</div>
       </div>
-      <div className={styles.book_card__header__control_panel}>
+      <div className={styles["book-card__control-panel"]}>
         <Link className="link" to={`/book/edit/${id}`} state={locationState}>
           <div onClick={onClickEdit}>
             <Edit />
@@ -30,11 +30,11 @@ export const BookCardUI: FC<TBookCardUIProps> = ({
         <Checkbox onChange={(e) => onChangeCheckbox(e, id)} />
       </div>
     </div>
-    <div className={styles.book_card__content}>
-      <div className={styles.book_card__item}>Название: {name}</div>
-      <div className={styles.book_card__item}>Автор: {author}</div>
-      <div className={styles.book_card__item}>Год: {year}</div>
-      <div className={styles.book_card__item}>Жанр: {genre}</div>
+    <div className={styles["book-card__content"]}>
+      <div className={styles["book-card__item"]}>Название: {name}</div>
+      <div className={styles["book-card__item"]}>Автор: {author}</div>
+      <div className={styles["book-card__item"]}>Год: {year}</div>
+      <div className={styles["book-card__item"]}>Жанр: {genre}</div>
     </div>
   </div>
 );

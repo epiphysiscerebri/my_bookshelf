@@ -11,8 +11,8 @@ export const BookListUI: FC<BookListUIProps> = ({
   onClickDeleteBtn,
 }) => {
   return (
-    <div className={styles.container_content}>
-      <div className={styles.control_panel}>
+    <div className={styles["book-list"]}>
+      <div className={styles["book-list__control-panel"]}>
         <Link
           className="link"
           to={`/book/create`}
@@ -26,7 +26,7 @@ export const BookListUI: FC<BookListUIProps> = ({
           </Button>
         )}
       </div>
-      <div className={styles.container_books}>
+      <div className={styles["book-list__container"]}>
         {books.map((book, index) => (
           <BookCard
             key={book.id}

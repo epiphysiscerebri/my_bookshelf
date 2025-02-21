@@ -1,4 +1,4 @@
-.book_form {
+.book-form {
   display: flex;
   flex-direction: column;
   padding: 50px;
@@ -6,14 +6,14 @@
   background: transparent;
 }
 
-.book_form__content {
+.book-form__content {
   display: flex;
   flex-direction: column;
   font-size: 1.3rem;
   gap: 2rem;
 }
 
-.book_form__control_panel {
+.book-form__control-panel {
   display: flex;
   flex-direction: row;
   gap: 1rem;

@@ -17,33 +17,21 @@ export const BookFormUI: FC<BookFormUIProps> = ({
     component="form"
     noValidate
     autoComplete="off"
-    className={styles.book_form}
+    className={styles["book-form"]}
     onSubmit={onSubmitClick}
   >
-    <div className={styles.book_form__content}>
-      <TextField
-        inputRef={formRef.name}
-        label="Название"
-        defaultValue={name}
-      ></TextField>
+    <div className={styles["book-form__content"]}>
+      <TextField inputRef={formRef.name} label="Название" defaultValue={name} />
       <TextField
         inputRef={formRef.author}
         label="Автор"
         defaultValue={author}
-      ></TextField>
-      <TextField
-        inputRef={formRef.year}
-        label="Год"
-        defaultValue={year}
-      ></TextField>
-      <TextField
-        inputRef={formRef.genre}
-        label="Жанр"
-        defaultValue={genre}
-      ></TextField>
+      />
+      <TextField inputRef={formRef.year} label="Год" defaultValue={year} />
+      <TextField inputRef={formRef.genre} label="Жанр" defaultValue={genre} />
     </div>
-    <div className={styles.book_form__control_panel}>
-      <Button type_button="submit">Схоранить</Button>
+    <div className={styles["book-form__control-panel"]}>
+      <Button type_button="submit">Сохранить</Button>
       <Button type_button="button" onClickBtn={onClose}>
         Отменить
       </Button>
