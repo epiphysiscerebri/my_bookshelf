@@ -52,7 +52,6 @@ export function App() {
             path="/book/create"
             element={
               <Modal title="Добавить книгу" onClose={closeModal}>
-                {/* TODO: Прокидывать функции закрытия и сохранения, либо функцию сохранения просто навесить в самом компоненте формы */}
                 <BookForm onClose={closeModal} />
               </Modal>
             }

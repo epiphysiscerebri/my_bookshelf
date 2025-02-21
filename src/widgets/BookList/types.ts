@@ -1,14 +1,8 @@
 import { Location } from "react-router-dom";
+import { TBook } from "../../types";
 
 export type BookListUIProps = {
-  // TODO: заменить на тип
-  books: {
-    name: string;
-    author: string;
-    year: string;
-    genre: string;
-    id: string;
-  }[];
+  books: TBook[];
   locationState: Location;
   onClickDeleteBtn: () => void;
 };

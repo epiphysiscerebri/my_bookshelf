@@ -21,7 +21,6 @@ export const BookFormUI: FC<BookFormUIProps> = ({
     onSubmit={onSubmitClick}
   >
     <div className={styles.book_form__content}>
-      {/* TODO: Пропустить через цикл поя формы, чтобы могла выводиться любое кол-во */}
       <TextField
         inputRef={formRef.name}
         label="Название"
