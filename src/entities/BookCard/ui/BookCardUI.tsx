@@ -2,6 +2,8 @@ import { FC } from "react";
 import styles from "./BookCardUI.module.css";
 import { Link, Location } from "react-router-dom";
 import { Edit } from "@mui/icons-material";
+import { Checkbox } from "../../../shared";
+
 export const BookCardUI: FC<{
   // TODO: Заменить на отдельный тип
   name: string;
@@ -11,7 +13,8 @@ export const BookCardUI: FC<{
   index: number;
   id: string;
   locationState: { background: Location };
-}> = ({ name, author, year, genre, index, id, locationState }) => (
+  onClickEdit: () => void;
+}> = ({ name, author, year, genre, index, id, locationState, onClickEdit }) => (
   <div className={styles.book_card}>
     <div className={styles.book_card__header}>
       <div className={styles.book_card__item__id}>
@@ -19,9 +22,11 @@ export const BookCardUI: FC<{
       </div>
       <div className={styles.book_card__header__control_panel}>
         <Link className="link" to={`/book/edit/${id}`} state={locationState}>
-          <Edit />
+          <div onClick={onClickEdit}>
+            <Edit />
+          </div>
         </Link>
-        <input type="checkbox" />
+        <Checkbox />
       </div>
     </div>
     <div className={styles.book_card__content}>

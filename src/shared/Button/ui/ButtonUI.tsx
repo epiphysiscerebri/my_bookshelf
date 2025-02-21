@@ -1,14 +1,15 @@
-import { FC } from "react";
-
+import { FC, ReactNode } from "react";
 import { Button } from "@mui/material";
 
 export const ButtonUI: FC<{
-  onClickBtn: () => void;
-  children: React.ReactNode;
-}> = ({ onClickBtn, children }) => (
-  <>
+  onClickBtn?: () => void;
+  type_button: "button" | "submit" | "reset";
+  children: ReactNode;
+}> = ({ onClickBtn, type_button, children }) => {
+  return (
     <Button
-      onClick={onClickBtn}
+      {...(onClickBtn && { onClick: onClickBtn })}
+      type={type_button}
       variant="outlined"
       sx={{
         outline: "1px solid white",
@@ -17,5 +18,5 @@ export const ButtonUI: FC<{
     >
       {children}
     </Button>
-  </>
-);
+  );
+};

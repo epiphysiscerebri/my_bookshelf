@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export const BookListUI: FC<{
   // TODO: заменить на тип
-  booksArray: {
+  books: {
     name: string;
     author: string;
     year: string;
@@ -16,8 +16,7 @@ export const BookListUI: FC<{
   }[];
   locationState: Location;
   onClickDeleteBtn: () => void;
-  onClickCreateBtn: () => void;
-}> = ({ booksArray, locationState, onClickDeleteBtn, onClickCreateBtn }) => {
+}> = ({ books, locationState, onClickDeleteBtn }) => {
   return (
     <div className={styles.container_content}>
       <div className={styles.control_panel}>
@@ -26,12 +25,14 @@ export const BookListUI: FC<{
           to={`/book/create`}
           state={{ background: locationState }}
         >
-          <Button onClickBtn={onClickCreateBtn}>Добавить</Button>
+          <Button type_button="button">Добавить</Button>
         </Link>
-        <Button onClickBtn={onClickDeleteBtn}>Удалить</Button>
+        <Button type_button="button" onClickBtn={onClickDeleteBtn}>
+          Удалить
+        </Button>
       </div>
       <div className={styles.container_books}>
-        {booksArray.map((book, index) => (
+        {books.map((book, index) => (
           <BookCard
             key={book.id}
             name={book.name}

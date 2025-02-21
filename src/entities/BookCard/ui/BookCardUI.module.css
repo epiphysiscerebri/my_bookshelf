@@ -5,7 +5,7 @@
   gap: 6rem;
   outline: 1px solid white;
   padding: 50px;
-  border-radius: 10%;
+  border-radius: 3%;
   min-width: 350px;
   max-width: 350px;
   min-height: 370px;
@@ -19,6 +19,8 @@
 
 .book_card__header__control_panel {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 3rem;
 }
 

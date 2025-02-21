@@ -1,8 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import {
-//   OrderReducer as ordersReducer,
-//   AuthReducer as authReducer
-// } from './slices';
+
+import { BooksReducer as booksReducer } from "./slices";
 
 import {
   TypedUseSelectorHook,
@@ -11,7 +9,9 @@ import {
 } from "react-redux";
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    books: booksReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
