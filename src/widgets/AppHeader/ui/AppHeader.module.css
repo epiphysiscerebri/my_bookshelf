@@ -12,10 +12,10 @@
   color: black;
 }
 
-.link_list {
+/* .link_list {
   display: flex;
   height: 100%;
-}
+} */
 
 .link {
   display: flex;
@@ -26,12 +26,6 @@
   text-decoration: none;
 }
 
-.link:hover {
-  cursor: pointer;
-  opacity: 0.7;
-  outline: 1px solid black;
-}
-
-.link_text {
+/* .link_text {
   align-self: center;
-}
+} */

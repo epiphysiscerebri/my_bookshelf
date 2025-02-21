@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { BookCard, BookForm } from "../entities";
-import { BookListPage } from "../pages";
+import { BookForm } from "../entities";
+import { BookListPage, NotFound404 } from "../pages";
 import { Modal } from "../shared";
 import { AppHeader } from "../widgets";
 import styles from "./App.module.css";
@@ -33,8 +33,7 @@ export function App() {
 
       <Routes location={backgroundLocation || location}>
         <Route path="/" element={<BookListPage />} />
-        <Route path="/login" element={<BookListPage />} />
-        {/* <Route path="/book/edit/:idBook" element={<BookCard />} /> */}
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
 
       {/* Модальные окна */}
@@ -58,8 +57,6 @@ export function App() {
               </Modal>
             }
           />
-
-          {/* <Route path="/login" element={<ListBookPage />} /> */}
         </Routes>
       )}
     </div>
