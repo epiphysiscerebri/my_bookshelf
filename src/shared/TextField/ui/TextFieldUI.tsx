@@ -1,12 +1,12 @@
 import { FC } from "react";
-
 import { TextField } from "@mui/material";
+import { TextFieldUIProps } from "../types";
 
-export const TextFieldUI: FC<{
-  inputRef?: any;
-  label: string;
-  defaultValue: string | undefined;
-}> = ({ inputRef, label, defaultValue }) => (
+export const TextFieldUI: FC<TextFieldUIProps> = ({
+  inputRef,
+  label,
+  defaultValue,
+}) => (
   <>
     <TextField
       inputRef={inputRef}

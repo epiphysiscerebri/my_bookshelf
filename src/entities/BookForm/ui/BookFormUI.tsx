@@ -2,17 +2,17 @@ import { FC } from "react";
 import styles from "./BookFormUI.module.css";
 import { Button, TextField } from "../../../shared";
 import { Box } from "@mui/material";
+import { BookFormUIProps } from "../types";
 
-export const BookFormUI: FC<{
-  // TODO: Заменить на отдельный тип
-  name?: string;
-  author?: string;
-  year?: string;
-  genre?: string;
-  formRef?: any;
-  onSubmitClick: (e?: any) => void;
-  onClose: () => void;
-}> = ({ name, author, year, genre, formRef, onSubmitClick, onClose }) => (
+export const BookFormUI: FC<BookFormUIProps> = ({
+  name,
+  author,
+  year,
+  genre,
+  formRef,
+  onSubmitClick,
+  onClose,
+}) => (
   <Box
     component="form"
     noValidate

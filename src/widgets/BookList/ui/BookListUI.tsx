@@ -1,22 +1,15 @@
 import { FC } from "react";
 import { BookCard } from "../../../entities";
 import styles from "./BookListUI.module.css";
-import { Location } from "react-router-dom";
 import { Button } from "../../../shared";
 import { Link } from "react-router-dom";
+import { BookListUIProps } from "../types";
 
-export const BookListUI: FC<{
-  // TODO: заменить на тип
-  books: {
-    name: string;
-    author: string;
-    year: string;
-    genre: string;
-    id: string;
-  }[];
-  locationState: Location;
-  onClickDeleteBtn: () => void;
-}> = ({ books, locationState, onClickDeleteBtn }) => {
+export const BookListUI: FC<BookListUIProps> = ({
+  books,
+  locationState,
+  onClickDeleteBtn,
+}) => {
   return (
     <div className={styles.container_content}>
       <div className={styles.control_panel}>

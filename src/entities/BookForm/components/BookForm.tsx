@@ -7,16 +7,17 @@ import {
 } from "../../../store/slices";
 import { useDispatch, useSelector } from "../../../store/store";
 import { FormRefs } from "../types";
+import { BookFormProps } from "../types";
 
-export const BookForm: FC<{
-  name?: string;
-  author?: string;
-  year?: string;
-  genre?: string;
-  index?: number;
-  id?: string;
-  onClose: () => void;
-}> = ({ name, author, year, genre, index, id, onClose }) => {
+export const BookForm: FC<BookFormProps> = ({
+  name,
+  author,
+  year,
+  genre,
+  index,
+  id,
+  onClose,
+}) => {
   const formData: FormRefs = {
     name: useRef<HTMLInputElement | null>(null),
     author: useRef<HTMLInputElement | null>(null),

@@ -1,9 +1,8 @@
 import { FC } from "react";
 import Checkbox from "@mui/material/Checkbox";
+import { CheckboxUIProps } from "../types";
 
-export const CheckboxUI: FC<{
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}> = ({ onChange }) => (
+export const CheckboxUI: FC<CheckboxUIProps> = ({ onChange }) => (
   <Checkbox
     onChange={onChange}
     sx={{

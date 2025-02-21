@@ -1,11 +1,12 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { Button } from "@mui/material";
+import { ButtonUIProps } from "../types";
 
-export const ButtonUI: FC<{
-  onClickBtn?: () => void;
-  type_button: "button" | "submit" | "reset";
-  children: ReactNode;
-}> = ({ onClickBtn, type_button, children }) => {
+export const ButtonUI: FC<ButtonUIProps> = ({
+  onClickBtn,
+  type_button,
+  children,
+}) => {
   return (
     <Button
       {...(onClickBtn && { onClick: onClickBtn })}

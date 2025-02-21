@@ -1,24 +1,11 @@
 import { FC } from "react";
 import styles from "./BookCardUI.module.css";
-import { Link, Location } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Edit } from "@mui/icons-material";
 import { Checkbox } from "../../../shared";
+import { TBookCardUIProps } from "../types";
 
-export const BookCardUI: FC<{
-  // TODO: Заменить на отдельный тип
-  name: string;
-  author: string;
-  year: string;
-  genre: string;
-  index: number;
-  id: string;
-  locationState: { background: Location };
-  onClickEdit: () => void;
-  onChangeCheckbox: (
-    e: React.ChangeEvent<HTMLInputElement>,
-    id: string
-  ) => void;
-}> = ({
+export const BookCardUI: FC<TBookCardUIProps> = ({
   name,
   author,
   year,

@@ -1,11 +1,12 @@
 import { FC } from "react";
 import { TextFieldUI } from "../ui";
+import { TextFieldProps } from "../types";
 
-export const TextField: FC<{
-  inputRef?: any;
-  label: string;
-  defaultValue: string | undefined;
-}> = ({ inputRef, label, defaultValue }) => (
+export const TextField: FC<TextFieldProps> = ({
+  inputRef,
+  label,
+  defaultValue,
+}) => (
   <TextFieldUI
     inputRef={inputRef}
     label={label}

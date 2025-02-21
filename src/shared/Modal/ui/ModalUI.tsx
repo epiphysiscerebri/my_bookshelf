@@ -1,12 +1,9 @@
 import { FC } from "react";
 
 import { Dialog, DialogTitle, DialogContent, Box } from "@mui/material";
+import { ModalUIProps } from "../types";
 
-export const ModalUI: FC<{
-  title: string;
-  onClose: () => void;
-  children: React.ReactNode;
-}> = ({ title, onClose, children }) => (
+export const ModalUI: FC<ModalUIProps> = ({ title, onClose, children }) => (
   <>
     <Dialog
       open={true}
