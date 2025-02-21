@@ -20,9 +20,11 @@ export const BookListUI: FC<BookListUIProps> = ({
         >
           <Button type_button="button">Добавить</Button>
         </Link>
-        <Button type_button="button" onClickBtn={onClickDeleteBtn}>
-          Удалить
-        </Button>
+        {books.length > 0 && (
+          <Button type_button="button" onClickBtn={onClickDeleteBtn}>
+            Удалить
+          </Button>
+        )}
       </div>
       <div className={styles.container_books}>
         {books.map((book, index) => (
