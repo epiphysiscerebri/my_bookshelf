@@ -2,7 +2,11 @@ import { FC, useEffect } from "react";
 import { BookListUI } from "../ui";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "../../../store/store";
-import { getBooks, getBooksSelector } from "../../../store/slices";
+import {
+  getBooks,
+  getBooksSelector,
+  deleteBookCards,
+} from "../../../store/slices";
 
 export const BookList: FC = () => {
   const location = useLocation();
@@ -13,7 +17,7 @@ export const BookList: FC = () => {
   }, []);
 
   const handleDeleteClick = () => {
-    console.log("удалить");
+    dispatch(deleteBookCards());
   };
 
   return (

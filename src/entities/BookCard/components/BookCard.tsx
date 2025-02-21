@@ -2,7 +2,10 @@ import { FC } from "react";
 import { BookCardUI } from "../ui";
 import { Location } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { selectBookCard } from "../../../store/slices";
+import {
+  selectBookCard,
+  selectBookCardsWillDelete,
+} from "../../../store/slices";
 
 export const BookCard: FC<{
   // TODO: Заменить на отдельный тип
@@ -18,6 +21,11 @@ export const BookCard: FC<{
   const handleEditClick = () => {
     dispatch(selectBookCard({ name, author, year, genre, index, id }));
   };
+  const handleSelectCard = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    id: string
+  ) => dispatch(selectBookCardsWillDelete({ id, checked: e.target.checked }));
+
   return (
     <BookCardUI
       name={name}
@@ -28,6 +36,7 @@ export const BookCard: FC<{
       id={id}
       locationState={{ background: locationState }}
       onClickEdit={handleEditClick}
+      onChangeCheckbox={handleSelectCard}
     />
   );
 };

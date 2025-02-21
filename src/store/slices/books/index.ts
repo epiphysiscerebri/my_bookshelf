@@ -18,11 +18,13 @@ const initialState: {
   selectedBookCard: any;
   loading: boolean;
   error: string | null | undefined;
+  booksDeleted: any;
 } = {
   books: [],
   selectedBookCard: null,
   loading: false,
   error: null,
+  booksDeleted: [],
 };
 
 const booksSlice = createSlice({
@@ -41,10 +43,23 @@ const booksSlice = createSlice({
         index + 1 == action.payload.index ? action.payload : book
       );
     },
+    selectBookCardsWillDelete: (state, action) => {
+      state.booksDeleted = action.payload.checked
+        ? Array.from(new Set([...state.booksDeleted, action.payload.id]))
+        : state.booksDeleted.filter(
+            (idBook: any) => idBook !== action.payload.id
+          );
+    },
+    deleteBookCards: (state) => {
+      state.books = state.books.filter(
+        (book: any) => !state.booksDeleted.includes(book.id)
+      );
+    },
   },
   selectors: {
     getBooksSelector: (state) => state.books,
     getSelectedBookCard: (state) => state.selectedBookCard,
+    getDeletedBookCards: (state) => state.booksDeleted,
   },
   extraReducers: (builder) => {
     builder.addCase(getBooks.fulfilled, (state, action) => {
@@ -54,7 +69,13 @@ const booksSlice = createSlice({
 });
 
 export const BooksReducer = booksSlice.reducer;
-export const { getBooksSelector, getSelectedBookCard } = booksSlice.selectors;
+export const { getBooksSelector, getSelectedBookCard, getDeletedBookCards } =
+  booksSlice.selectors;
 
-export const { selectBookCard, createBookCard, editBookCard } =
-  booksSlice.actions;
+export const {
+  selectBookCard,
+  createBookCard,
+  editBookCard,
+  selectBookCardsWillDelete,
+  deleteBookCards,
+} = booksSlice.actions;

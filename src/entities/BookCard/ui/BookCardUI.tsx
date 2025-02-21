@@ -14,7 +14,21 @@ export const BookCardUI: FC<{
   id: string;
   locationState: { background: Location };
   onClickEdit: () => void;
-}> = ({ name, author, year, genre, index, id, locationState, onClickEdit }) => (
+  onChangeCheckbox: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    id: string
+  ) => void;
+}> = ({
+  name,
+  author,
+  year,
+  genre,
+  index,
+  id,
+  locationState,
+  onClickEdit,
+  onChangeCheckbox,
+}) => (
   <div className={styles.book_card}>
     <div className={styles.book_card__header}>
       <div className={styles.book_card__item__id}>
@@ -26,7 +40,7 @@ export const BookCardUI: FC<{
             <Edit />
           </div>
         </Link>
-        <Checkbox />
+        <Checkbox onChange={(e) => onChangeCheckbox(e, id)} />
       </div>
     </div>
     <div className={styles.book_card__content}>
