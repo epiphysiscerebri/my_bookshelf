@@ -1,5 +1,5 @@
 export type TextFieldProps = {
-  inputRef?: any;
+  inputRef?: React.RefObject<HTMLInputElement | null>;
   label: string;
   defaultValue: string | undefined;
 };

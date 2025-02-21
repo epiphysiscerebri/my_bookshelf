@@ -20,7 +20,7 @@ export type BookFormUIProps = {
   author?: string;
   year?: string;
   genre?: string;
-  formRef?: any;
-  onSubmitClick: (e?: any) => void;
+  formRef: FormRefs;
+  onSubmitClick: (e?: React.FormEvent<HTMLFormElement>) => void;
   onClose: () => void;
 };

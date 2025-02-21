@@ -3,11 +3,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { booksArray } from "../../../shared";
 
 type TInitialState = {
-  books: any;
-  selectedBookCard: any;
-  loading: boolean;
-  error: string | null | undefined;
-  booksDeleted: any;
+  books: TBook[];
+  selectedBookCard: TBook | null;
+  booksDeleted: string[];
 };
 
 // Имитация работы с асинхронными запосами
@@ -25,8 +23,6 @@ export const getBooks = createAsyncThunk(
 const initialState: TInitialState = {
   books: [],
   selectedBookCard: null,
-  loading: false,
-  error: null,
   booksDeleted: [],
 };
 
@@ -41,7 +37,6 @@ const booksSlice = createSlice({
       state.books.push(action.payload);
     },
     editBookCard: (state, action) => {
-      // TODO: Поменять все any
       state.books = state.books.map((book: TBook, index: number) =>
         index + 1 == action.payload.index ? action.payload : book
       );
@@ -50,12 +45,12 @@ const booksSlice = createSlice({
       state.booksDeleted = action.payload.checked
         ? Array.from(new Set([...state.booksDeleted, action.payload.id]))
         : state.booksDeleted.filter(
-            (idBook: any) => idBook !== action.payload.id
+            (idBook: string) => idBook !== action.payload.id
           );
     },
     deleteBookCards: (state) => {
       state.books = state.books.filter(
-        (book: any) => !state.booksDeleted.includes(book.id)
+        (book: TBook) => !state.booksDeleted.includes(book.id)
       );
     },
   },

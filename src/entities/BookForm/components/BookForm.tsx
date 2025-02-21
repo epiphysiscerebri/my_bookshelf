@@ -1,4 +1,4 @@
-import { FC, FormEvent, useRef } from "react";
+import { FC, useRef } from "react";
 import { BookFormUI } from "../ui";
 import {
   createBookCard,
@@ -28,8 +28,8 @@ export const BookForm: FC<BookFormProps> = ({
   const booksListLength = useSelector(getBooksSelector).length;
   const dispatch = useDispatch();
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
+    e?.preventDefault();
     // TODO: Переделать условие на более элегантное
     if (
       !formData.name.current ||

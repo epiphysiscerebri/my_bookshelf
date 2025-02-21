@@ -1,10 +1,13 @@
-export const booksArray = [
+import { TBook } from "../../types";
+
+export const booksArray: TBook[] = [
   {
     name: "Война и мир",
     author: "Л.Н. Толстой",
     year: "1873",
     genre: "роман-эпопея",
     id: "11233461",
+    index: 1,
   },
   {
     name: "Война и мир",
@@ -12,6 +15,7 @@ export const booksArray = [
     year: "1873",
     genre: "роман-эпопея",
     id: "11233415",
+    index: 2,
   },
   {
     name: "Война и мир",
@@ -19,6 +23,7 @@ export const booksArray = [
     year: "1873",
     genre: "роман-эпопея",
     id: "11233414",
+    index: 3,
   },
   {
     name: "Война и мир",
@@ -26,6 +31,7 @@ export const booksArray = [
     year: "1873",
     genre: "роман-эпопея",
     id: "11233413",
+    index: 4,
   },
   {
     name: "Война и мир",
@@ -33,6 +39,7 @@ export const booksArray = [
     year: "1873",
     genre: "роман-эпопея",
     id: "11233412",
+    index: 5,
   },
   {
     name: "Война и мир",
@@ -40,6 +47,7 @@ export const booksArray = [
     year: "1873",
     genre: "роман-эпопея",
     id: "11233411",
+    index: 6,
   },
   {
     name: "Война и мир",
@@ -47,5 +55,6 @@ export const booksArray = [
     year: "1873",
     genre: "роман-эпопея",
     id: "1123341",
+    index: 7,
   },
 ];
